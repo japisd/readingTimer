@@ -7,18 +7,17 @@
 </head>
 <script>
   
-  timerEdwin = () => {
+  timer = (displayContainer) => {
     window.setInterval(
       ()=> {
-      let timerDisplay = document.getElementById('edwinTimer');
-      timerDisplay.value =  parseInt(timerDisplay.value) + 1;
+      let timerDisplay = document.getElementById('displayContainer');
+      timerDisplay.innerHTML =  parseInt(timerDisplay.innerHTML) + 1;
     }, 1000);
   }
 </script>
 <body>
     <p>CBRRRNNN</p>
-    <button onclick="timerEdwin">Edwin</button> <p id="edwinTimer">2</p>
-
-    <button onclick="timerJulio">Julio</button> <p id="julioTimer">2</p>
+    <button onclick="timer('edwinTimer')">Edwin</button> <p id="edwinTimer">0</p>
+    <button onclick="timer('julioTimer')">Julio</button> <p id="julioTimer">0</p>
 </body>
 </html>
