@@ -7,17 +7,36 @@
 </head>
 <script>
   
-  timer = (displayContainer) => {
+const timerRun = (displayContainer) => {
     window.setInterval(
       ()=> {
       let timerDisplay = document.getElementById(displayContainer);
       timerDisplay.innerHTML =  parseInt(timerDisplay.innerHTML) + 1;
     }, 1000);
   }
+const timer = {
+  name: '',
+  isRunning: false,
+  value: 0,
+  interval = null
+}
+let timers = {
+  julioTimer = {...timer, name='julioTimer'},
+  edwinTimer = {...timer, name='edwinTimer'}
+}
+handleTimer = (timerName) => {
+  let timer = timers[timerName];
+  if (timer.isRunning){
+    window.clearInterval(timer[interval]); 
+  } else {
+    timer.interval = timerRun(timerName);
+    timer.isRunning = true;
+  }
+  }
 </script>
 <body>
     <p>CBRRRNNN</p>
-    <button onclick="timer('edwinTimer')">Edwin</button> <p id="edwinTimer">0</p>
-    <button onclick="timer('julioTimer')">Julio</button> <p id="julioTimer">0</p>
+    <button onclick="handleTimer('edwinTimer')">Edwin</button> <p id="edwinTimer">0</p>
+    <button onclick="handleTimer('julioTimer')">Julio</button> <p id="julioTimer">0</p>
 </body>
 </html>
