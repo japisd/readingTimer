@@ -8,7 +8,7 @@
 <script>
   
 const timerRun = (displayContainer) => {
-    window.setInterval(
+    return window.setInterval(
       ()=> {
       let timerDisplay = document.getElementById(displayContainer);
       timerDisplay.innerHTML =  parseInt(timerDisplay.innerHTML) + 1;
@@ -28,6 +28,7 @@ let timers = {
 handleTimer = (timerName) => {
   let timer = timers[timerName];
   if (timer.isRunning){
+    console.log(timer.interval);
     window.clearInterval(timer.interval); 
     timer.isRunning = false;
   } else {
