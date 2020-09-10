@@ -5,18 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<script>
+  
+  timerEdwin = () => {
+    window.setInterval(
+      ()=> {
+      let timerDisplay = document.getElementById('edwinTimer');
+      timerDisplay.value =  parseInt(timerDisplay.value) + 1;
+    }, 1000);
+  }
+</script>
 <body>
     <p>CBRRRNNN</p>
-    <div id="like_button_container"></div>
+    <button onclick="timerEdwin">Edwin</button> <p id="edwinTimer">2</p>
 
-  <!-- ... other HTML ... -->
-
-  <!-- Load React. -->
-  <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
-    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
-    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
-
-      <!-- Load our React component. -->
-  <script src="like_button.js"></script>
+    <button onclick="timerJulio">Julio</button> <p id="julioTimer">2</p>
 </body>
 </html>
