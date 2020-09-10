@@ -10,7 +10,7 @@
   timer = (displayContainer) => {
     window.setInterval(
       ()=> {
-      let timerDisplay = document.getElementById('displayContainer');
+      let timerDisplay = document.getElementById(displayContainer);
       timerDisplay.innerHTML =  parseInt(timerDisplay.innerHTML) + 1;
     }, 1000);
   }
