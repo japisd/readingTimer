@@ -24,10 +24,11 @@ let timers = {
   julioTimer : {...timer, name: 'julioTimer'},
   edwinTimer : {...timer, name: 'edwinTimer'}
 }
+
 handleTimer = (timerName) => {
   let timer = timers[timerName];
   if (timer.isRunning){
-    window.clearInterval(timer[interval]); 
+    window.clearInterval(timer.interval); 
     timer.isRunning = false;
   } else {
     timer.interval = timerRun(timerName);
