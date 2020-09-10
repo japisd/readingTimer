@@ -28,6 +28,7 @@ handleTimer = (timerName) => {
   let timer = timers[timerName];
   if (timer.isRunning){
     window.clearInterval(timer[interval]); 
+    timer.isRunning = false;
   } else {
     timer.interval = timerRun(timerName);
     timer.isRunning = true;
